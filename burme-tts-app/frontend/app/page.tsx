@@ -1,10 +1,9 @@
 'use client'
 
 import { useState, useRef } from 'react'
-import { motion } from 'framer-motion'
 import TextAnimation from '@/components/TextAnimation'
 import LoadingAnimation from '@/components/LoadingAnimation'
-import { FiMic, FiPlay, FiDownload, FiSave } from 'react-icons/fi'
+import { FiPlay, FiDownload } from 'react-icons/fi'
 
 export default function HomePage() {
   const [text, setText] = useState('')
@@ -12,7 +11,7 @@ export default function HomePage() {
   const [isGenerating, setIsGenerating] = useState(false)
   const [generatedText, setGeneratedText] = useState('')
   const [audioUrl, setAudioUrl] = useState('')
-  const audioRef = useRef<HTMLAudioElement>(null)
+  const audioRef = useRef(null)
 
   const handleGenerate = async () => {
     if (!text.trim() || !apiKey) return
@@ -50,9 +49,9 @@ export default function HomePage() {
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+      <div
+       
+       
         className="space-y-6"
       >
         <div className="text-center space-y-2">
@@ -102,20 +101,20 @@ export default function HomePage() {
         </div>
 
         {generatedText && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+          <div
+           
+           
             className="bg-gray-800 rounded-xl p-6"
           >
             <h3 className="text-lg font-semibold mb-3">Generated Text:</h3>
             <TextAnimation text={generatedText} className="text-gray-300" />
-          </motion.div>
+          </div>
         )}
 
         {audioUrl && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+          <div
+           
+           
             className="bg-gray-800 rounded-xl p-6"
           >
             <audio ref={audioRef} controls className="w-full" />
@@ -138,9 +137,9 @@ export default function HomePage() {
                 <FiDownload size={16} /> Download
               </button>
             </div>
-          </motion.div>
+          </div>
         )}
-      </motion.div>
+      </div>
     </div>
   )
 }

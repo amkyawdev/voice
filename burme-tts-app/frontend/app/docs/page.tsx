@@ -1,13 +1,13 @@
 'use client'
 
-import { motion } from 'framer-motion'
+
 
 export default function DocsPage() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+      <div
+       
+       
         className="space-y-6"
       >
         <h1 className="text-3xl font-bold">Documentation</h1>
@@ -40,7 +40,7 @@ export default function DocsPage() {
             <code className="block text-sm text-gray-300">GET /api/health - Health check endpoint</code>
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   )
 }

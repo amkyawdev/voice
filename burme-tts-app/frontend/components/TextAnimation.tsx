@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
 
 interface TextAnimationProps {
   text: string
@@ -29,23 +28,9 @@ export default function TextAnimation({ text, className = '' }: TextAnimationPro
 
   return (
     <div className={`font-mono ${className}`}>
-      {displayText.split('').map((char, index) => (
-        <motion.span
-          key={index}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: index * 0.03 }}
-          className="inline-block"
-        >
-          {char}
-        </motion.span>
-      ))}
+      {displayText}
       {currentIndex < text.length && (
-        <motion.span
-          animate={{ opacity: [1, 0] }}
-          transition={{ repeat: Infinity, duration: 0.8 }}
-          className="inline-block w-0.5 h-5 bg-gray-400 ml-0.5"
-        />
+        <span className="inline-block w-0.5 h-5 bg-gray-400 ml-0.5 animate-pulse" />
       )}
     </div>
   )

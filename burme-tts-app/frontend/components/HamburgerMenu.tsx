@@ -2,8 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { motion, AnimatePresence } from 'framer-motion'
-import { FiMenu, FiX, FiHome, FiFileText, FiPhone, FiInfo } from 'react-icons/fi'
+import { FiMenu, FiX, FiHome, FiFileText, FiInfo } from 'react-icons/fi'
 
 const menuItems = [
   { name: 'Home', path: '/', icon: FiHome },
@@ -23,31 +22,23 @@ export default function HamburgerMenu() {
         {isOpen ? <FiX size={20} /> : <FiMenu size={20} />}
       </button>
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ type: 'spring', damping: 20 }}
-            className="fixed top-0 right-0 w-64 h-full bg-gray-800 z-40 shadow-xl"
-          >
-            <div className="flex flex-col pt-20 px-6 gap-4">
-              {menuItems.map((item) => (
-                <Link
-                  key={item.path}
-                  href={item.path}
-                  onClick={() => setIsOpen(false)}
-                  className="flex items-center gap-3 p-3 text-gray-300 hover:text-white hover:bg-gray-700 rounded-lg transition-all duration-300"
-                >
-                  <item.icon size={18} />
-                  <span className="text-sm">{item.name}</span>
-                </Link>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {isOpen && (
+        <div className="fixed top-0 right-0 w-64 h-full bg-gray-800 z-40 shadow-xl">
+          <div className="flex flex-col pt-20 px-6 gap-4">
+            {menuItems.map((item) => (
+              <Link
+                key={item.path}
+                href={item.path}
+                onClick={() => setIsOpen(false)}
+                className="flex items-center gap-3 p-3 text-gray-300 hover:text-white hover:bg-gray-700 rounded-lg transition-all duration-300"
+              >
+                <item.icon size={18} />
+                <span className="text-sm">{item.name}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </>
   )
 }

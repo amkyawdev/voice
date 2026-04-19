@@ -1,7 +1,8 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { FiMail, FiGithub, FiTikTok, FiUser, FiCode } from 'react-icons/fi'
+
+import { FaTiktok } from 'react-icons/fa'
+import { FiMail, FiGithub, FiUser, FiCode } from 'react-icons/fi'
 
 export default function AboutPage() {
   const adminInfo = {
@@ -15,9 +16,9 @@ export default function AboutPage() {
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+      <div
+       
+       
         className="space-y-6"
       >
         <h1 className="text-3xl font-bold">About</h1>
@@ -67,7 +68,7 @@ export default function AboutPage() {
             </div>
 
             <div className="flex items-center gap-3 p-3 bg-gray-700 rounded-lg">
-              <FiTikTok className="text-gray-400" />
+              <FaTiktok className="text-gray-400" />
               <div>
                 <p className="text-sm text-gray-400">TikTok</p>
                 <a href={`https://tiktok.com/@${adminInfo.tiktok.substring(1)}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
@@ -97,7 +98,7 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   )
 }
