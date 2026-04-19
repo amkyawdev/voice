@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { GoogleGenerativeAI } from '@google/generative-ai'
+import { Mic } from 'lucide-react'
 import LoadingSpinner from './LoadingSpinner'
 import TextAnimation from './TextAnimation'
 
@@ -52,26 +53,30 @@ export default function VoiceGenerator() {
         value={text}
         onChange={(e) => setText(e.target.value)}
         placeholder="Enter text to convert to speech..."
-        className="w-full h-32 p-3 bg-gray-800 border border-gray-700 rounded-lg text-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-500"
+        className="input-field resize-none"
       />
 
       <button
         onClick={generateSpeech}
         disabled={loading || !text.trim()}
-        className="px-4 py-2 bg-gray-700 hover:bg-gray-600 disabled:opacity-50 rounded-lg transition flex items-center gap-2"
+        className="btn-primary flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        {loading ? <LoadingSpinner /> : '🔊 Generate Voice'}
+        {loading ? <LoadingSpinner /> : <Mic className="w-5 h-5" />}
+        Generate Voice
       </button>
 
       {statusMessage && (
-        <div className="flex items-center gap-2 text-sm text-gray-400">
+        <div className="flex items-center gap-2 text-sm text-accent-400">
           <LoadingSpinner size="small" />
           <TextAnimation text={statusMessage} />
         </div>
       )}
 
       {generatedAudio === 'playing' && !loading && (
-        <div className="text-green-400 text-sm">✅ Voice is playing...</div>
+        <div className="text-accent-400 text-sm flex items-center gap-2">
+          <span className="w-2 h-2 bg-accent-400 rounded-full animate-pulse"></span>
+          Voice is playing...
+        </div>
       )}
     </div>
   )
