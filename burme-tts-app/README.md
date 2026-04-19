@@ -1,56 +1,54 @@
 # Burme TTS App
 
-AI-Powered Text to Speech with Gemini
+<p align="center">
+  <a href="https://github.com/amkyawDev/voice">
+    <img src="https://img.shields.io/github/license/amkyawdev/voice?style=for-the-badge" alt="License">
+  </a>
+  <a href="https://github.com/amkyawdev/voice">
+    <img src="https://img.shields.io/github/stars/amkyawdev/voice?style=for-the-badge" alt="Stars">
+  </a>
+</p>
 
-## Project Structure
+<p align="center">
+  <strong>AI-Powered Text-to-Speech</strong><br>
+  React + Vite + Gemini AI
+</p>
 
-```
-burme-tts-app/
-├── frontend/                 # Next.js frontend
-│   ├── app/
-│   │   ├── layout.tsx
-│   │   ├── page.tsx         # Main TTS page
-│   │   ├── docs/
-│   │   │   └── page.tsx
-│   │   ├── about/
-│   │   │   └── page.tsx
-│   │   └── globals.css
-│   ├── components/
-│   │   ├── HamburgerMenu.tsx
-│   │   ├── TextAnimation.tsx
-│   │   ├── LoadingAnimation.tsx
-│   │   ├── VoiceSelector.tsx
-│   │   └── GeneratorButton.tsx
-│   ├── lib/
-│   │   └── api.ts
-│   ├── package.json
-│   └── next.config.js
-├── backend/                  # Python backend
-│   ├── main.py
-│   ├── tts_engine.py
-│   ├── requirements.txt
-│   └── vercel.json
-└── README.md
-```
+---
 
-## Quick Start
+## ✨ Features
 
-### Backend (FastAPI)
+- AI-Powered Speech (Gemini + Web Speech API)
+- Smooth Animations (Framer Motion)
+- Responsive Design
+- Dark Theme (Gray & Black)
+- Vercel Ready
+
+---
+
+## 🚀 Quick Start
 
 ```bash
-cd backend
-pip install -r requirements.txt
-uvicorn main:app --reload --port 8000
-```
+# Clone
+git clone https://github.com/amkyawdev/voice.git
+cd voice/burme-tts-app
 
-### Frontend (Next.js)
-
-```bash
-cd frontend
+# Install
 npm install
+
+# Run
 npm run dev
 ```
 
-## Deployment
+## 🌐 Deploy
 
-Deploy to Vercel - see documentation in project files.
+Push to GitHub → Import to Vercel → Add `VITE_GEMINI_API_KEY` → Deploy
+
+---
+
+## 👨‍💻 Developer
+
+- **Aung Myo Kyaw** - Full Stack Developer
+- amk.kyaw92@gmail.com
+- [GitHub](https://github.com/amkyawdev)
+- [TikTok](https://tiktok.com/@amkyaw.dev)
