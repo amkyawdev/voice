@@ -4,7 +4,7 @@ import { Mic } from 'lucide-react'
 import LoadingSpinner from './LoadingSpinner'
 import TextAnimation from './TextAnimation'
 
-const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY)
+const genAI = new GoogleGenerativeAI(import.meta.env.GEMINI_API_KEY)
 
 export default function VoiceGenerator() {
   const [text, setText] = useState('')
